@@ -1,0 +1,23 @@
+@import "../../../../styles";
+:host {
+  .mat-dialog-content,
+  #dialog-content-container {
+    position: relative;
+    max-height: none;
+    height: 450px;
+  }
+  .mat-dialog-content-global {
+    height: 580px !important;
+  }
+  .permission-management-container {
+    width: 96%;
+  }
+  .mat-dialog-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,23 @@
+<button mat-button (menuClosed)="isMenuClosed=true" (menuOpened)="isMenuClosed=false" [matMenuTriggerFor]="user">
+  <div class="user-container">
+    <div class="user-logo">
+        <mat-icon>account_circle</mat-icon>
+    </div>
+    <div class="user-info">
+      <div class="user-email">Admin</div>
+      <div class="user-role"></div>
+    </div>
+    <div class="user-container-state-icon">
+      <mat-icon *ngIf="isMenuClosed">keyboard_arrow_down</mat-icon>
+      <mat-icon *ngIf="!isMenuClosed">keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+</button>
+<mat-menu [xPosition]="'after'" [yPosition]="'below'" [overlapTrigger]="false" #user="matMenu">
+  <div class="user-menu-container">
+    <button (click)="logout()" mat-menu-item>
+      <i class="fa fa-lock" aria-hidden="true"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</mat-menu>

@@ -1,0 +1,7 @@
+<div *ngIf="(loading | async)">
+  <temp-loading-spinner></temp-loading-spinner>
+</div>
+
+<div *ngIf="!(loading | async)&& ((users | async).length>0)" class="user-list-container">
+  <temp-user-item *ngFor="let user of users | async" [user]="user"></temp-user-item>
+</div>

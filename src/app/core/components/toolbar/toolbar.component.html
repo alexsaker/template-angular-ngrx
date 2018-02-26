@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="mat-elevation-z1 toolbar">
+  <div class="toolbar-right">
+    <div class="button-menu">
+        <mat-icon (click)="toggleMenu.emit()" >dehaze</mat-icon>
+    </div>
+    <div>
+      <div class="toolbar-right-actions">
+        <temp-theme-menu></temp-theme-menu>
+        <span class="separator">|</span>
+        <temp-user-menu></temp-user-menu>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

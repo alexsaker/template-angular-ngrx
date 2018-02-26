@@ -1,0 +1,11 @@
+<div class="search-input-container" [formGroup]="mySearchForm">
+  <mat-form-field>
+    <input autocomplete="off" matInput formControlName="search" placeholder="{{searchPlaceHolder | async}}" value="{{searchInput | async}}">
+    <button matButton *ngIf="(searchInput | async)" matSuffix aria-label="Clear" class="mat-icon-button" (click)="emitRemoveSearch()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    <button matSuffix matButton (click)="emitSearch()" class="mat-icon-button">
+      <i class="fa fa-search"></i>
+    </button>
+  </mat-form-field>
+</div>

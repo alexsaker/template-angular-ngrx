@@ -1,0 +1,9 @@
+<temp-core-layout class="mat-app-background mat-typography" [ngClass]="theme">
+    <temp-sidenav-menu *ngIf="(loggedIn | async)" [opened]="sidenavMenuOpened | async"></temp-sidenav-menu>
+    <div class="root-content">
+        <temp-toolbar *ngIf="(loggedIn | async)" (toggleMenu)="toggleMenu($event)"></temp-toolbar>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</temp-core-layout>

@@ -1,0 +1,45 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="emitForm()">
+  <mat-card mat-theme="default" class="login-card">
+    <mat-car-header align="center">
+      <mat-card-title>
+        <h1>Login</h1>
+      </mat-card-title>
+    </mat-car-header>
+
+    <mat-card-content align="center">
+      <mat-form-field>
+        <input #user matInput formControlName="user" placeholder="User" type="text" value="">
+      </mat-form-field>
+      <div *ngIf="
+              user.invalid &&
+              (user.dirty && user.touched)" class="error">
+        <mat-error *ngIf="user.hasError('required')">
+          User is mandatory
+        </mat-error>
+      </div>
+
+      <mat-form-field>
+        <input #userPassword matInput formControlName="password" placeholder="Password" type="{{passwordInputType}}" value="">
+        <mat-error *ngIf="password.hasError('required')">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="password.hasError('minlength')">
+          Password minimun length is {{passwordMinLength}}
+        </mat-error>
+        <mat-icon matSuffix>
+          <i (click)="toggleInputType()" [ngClass]="{'active-eye': (passwordInputType==='text')}" class="fa fa-eye"></i>
+        </mat-icon>
+      </mat-form-field>
+
+      <mat-error class="submission-error" *ngIf="((loginError | async))">
+        <i class="fa fa-times" aria-hidden="true"></i>Wrong credentials</mat-error>
+
+
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button [innerHTML]="'Login'" [disabled]="(myForm.pristine || myForm.invalid)" mat-raised-button color="primary" (click)="emitForm()">
+        <i *ngIf="isLoading | async" class="fa fa-spin fa-spinner"></i>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

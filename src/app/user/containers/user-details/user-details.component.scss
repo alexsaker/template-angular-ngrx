@@ -1,0 +1,9 @@
+:host {
+    overflow: auto;
+    .post-list-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        flex: 1 1 auto;
+    }
+}

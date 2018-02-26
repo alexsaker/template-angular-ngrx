@@ -1,0 +1,7 @@
+// mixin name will be used in main style.scss
+@mixin error-component-theme($theme) {
+    .mat-error {
+        color: $error;
+        margin-top: -15px;
+    }
+}

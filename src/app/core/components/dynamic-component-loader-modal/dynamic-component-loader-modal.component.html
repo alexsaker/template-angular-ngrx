@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data.inputs.title}}</h2>
+<mat-dialog-content id="dialog-content-container" [ngClass]="{'mat-dialog-content-global':(!data.inputs.customView)}">
+  <div #dynamicComponentContainer></div>
+</mat-dialog-content>
+<mat-dialog-actions *ngIf="!!!data.inputs.disableActionButtons">
+  <button class="misc-action" mat-button [disabled]="isSubmitButtonDisabled" mat-raised-button color="primary" (click)="submit()">Save</button>
+  <button class="cancel-action" mat-button (click)="cancel()">Cancel</button>
+</mat-dialog-actions>

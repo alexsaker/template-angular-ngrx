@@ -1,0 +1,41 @@
+:host {
+  .error-list-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    flex-flow: column;
+    #error-list-title {
+      border-bottom: 1px dashed rgba(170, 170, 170, 0.3);
+      font-weight: 700;
+      margin-right: 12px;
+      min-height: 25px;
+    }
+    ul {
+      max-height: 200px;
+      list-style: none;
+      padding: 0;
+      li {
+        margin-top: 12px;
+      }
+    }
+    .action-close {
+      cursor: pointer;
+      color: #af0a0e;
+      position: fixed;
+      top: 8px;
+      right: 8px;
+      font-size: 28px;
+      opacity: 0.9;
+    }
+    .action-close:hover {
+      color: #98110e;
+      opacity: 1;
+    }
+  }
+}

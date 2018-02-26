@@ -1,0 +1,9 @@
+:host {
+    .core-container {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+    }
+}

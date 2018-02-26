@@ -1,0 +1,12 @@
+@import "../../../../styles";
+
+.palette-container{
+    width:200px;
+    height: 200px;
+    .cyan{
+        background:#00BCD4;
+    }
+    .red{
+        background:red;
+    }
+}

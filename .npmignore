@@ -1,0 +1,12 @@
+e2e
+mock
+config/environment.ts
+coverage
+src
+.vscode
+/.angular-cli.json
+/.editorconfig
+/gulpfile.js
+/karma.conf.js
+/protractor.conf.js
+/tslint.json

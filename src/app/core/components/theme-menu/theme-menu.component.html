@@ -1,0 +1,9 @@
+<button mat-icon-button [matMenuTriggerFor]="theme">
+    <mat-icon>brush</mat-icon>
+  </button>
+  <mat-menu [overlapTrigger]="false" class="theme-selector-menu" #theme="matMenu">
+    <div class="palette-container">
+      <button (click)="setTheme('cyan-theme')" mat-mini-fab class="cyan"></button>
+      <button (click)="setTheme('red-dark-theme')" mat-mini-fab  class="red"></button>
+    </div>
+  </mat-menu>

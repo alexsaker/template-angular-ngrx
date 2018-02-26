@@ -1,0 +1,7 @@
+<button class="loading-action" [disabled]="disabled" mat-button (click)="doAction()" mat-raised-button color="primary" class="loading-button">
+  <div *ngIf="loading">
+    <mat-progress-spinner mode="indeterminate" color="accent" diameter="{{diameter}}">
+    </mat-progress-spinner>
+  </div>
+  <div [ngClass]="{'button-text-margin':loading}">{{text}}</div>
+</button>

@@ -1,0 +1,46 @@
+<div class="sidenav-menu" [ngClass]="{'collapsed': !(isSidenavMenuOpened | async)}">
+
+  <div class="brand-banner">
+    <span *ngIf="(isSidenavMenuOpened | async)">Template Angular Ngrx</span>
+    <img *ngIf="!(isSidenavMenuOpened | async)" class="logo" src="assets\images\logo.png">
+  </div>
+
+  <div id="sidenav-menu-container">
+    <div *ngIf="!(isSidenavMenuOpened | async)" class="sidenav-menu-container-closed">
+      <button *ngIf="(( users | async).length > 0)" mat-icon-button [matMenuTriggerFor]="userList">
+        <mat-icon>group</mat-icon>
+      </button>
+      <mat-menu [xPosition]="'after'" [yPosition]="'below'" [overlapTrigger]="false" class="users-collapsed-menu" #userList="matMenu">
+        <div *ngFor="let user of users | async" class="users-container">
+          <button (click)="goToUser(user)" mat-menu-item class="user-item">
+            <mat-icon>account_circle</mat-icon>{{user.name}}
+          </button>
+
+        </div>
+      </mat-menu>
+
+
+    </div>
+    <div *ngIf="(isSidenavMenuOpened | async)">
+      <!-- sidenav content -->
+      <mat-expansion-panel *ngIf="(( users | async).length > 0)" [expanded]="isViewPanelOpen" (opened)="isViewPanelOpen = true;"
+        (closed)="isViewPanelOpen = false;">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>group</mat-icon>Users
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div *ngFor="let user of users | async">
+          <div class="user-item">
+            <a (click)="goToUser(user)">
+              <mat-icon>account_circle</mat-icon>
+              {{user.name}}
+            </a>
+          </div>
+        </div>
+      </mat-expansion-panel>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+// always include only once per project
+@import "../node_modules/@angular/material/theming";
+@include mat-core(); // import our custom theme
+// Importing Themes
+@import "./themes/_variables";
+@import "./themes/cyan-theme";
+@import "./themes/red-dark-theme";
+@import "./app/authentication/components/login-form/_login-form.component.theme";
+@import "./app/core/components/sidenav-menu/_sidenav-menu.component.theme";
+@import "./app/core/components/toolbar/_toolbar.component.theme";
+@import "./themes/_error.component.theme";
+@mixin custom-components-theme($theme) {
+    // You can include your custom component's theme
+    @include toolbar-component-theme($theme);
+    @include login-form-component-theme($theme);
+    @include sidenav-menu-component-theme($theme);
+    @include error-component-theme($theme);
+}
+
+// Theme Classes
+.cyan-theme {
+    @include angular-material-theme($cyan-theme);
+    @include custom-components-theme($cyan-theme);
+}
+
+.red-dark-theme {
+    @include angular-material-theme($red-dark-theme);
+    @include custom-components-theme($red-dark-theme);
+}
+
+// Global Styles
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Roboto, FontAwesome;
+    outline-style: none !important;
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus {
+        background-color: none !important;
+        color: transparent !important;
+        border-bottom-color: $gray-lighter;
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    }
+}
+
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none;
+    overflow: hidden;
+    margin: 0px;
+    height: 100%;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }

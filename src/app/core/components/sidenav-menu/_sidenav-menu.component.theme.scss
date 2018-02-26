@@ -1,0 +1,27 @@
+     // mixin name will be used in main style.scss
+    @mixin sidenav-menu-component-theme($theme) {
+        // retrieve variables from theme
+        // (all possible variables, use only what you really need)
+        $primary: map-get($theme, primary);
+        $foreground: map-get($theme, foreground);
+        .mat-expansion-indicator::after {
+            color: $white;
+        }
+        .mat-expansion-panel-header-title,
+        .mat-expansion-indicator {
+            color: $white;
+        }
+        .user-item {
+            color: $white;
+            &:hover {
+                background-color: mat-color($primary) !important;
+            }
+            &.active {
+                background-color: darken(mat-color($primary), 12%) !important;
+            }
+        }
+
+        .brand-banner {
+            background-color: darken(mat-color($primary), 12%);
+        }
+    }

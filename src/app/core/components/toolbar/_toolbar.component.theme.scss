@@ -1,0 +1,8 @@
+
+// mixin name will be used in main style.scss
+@mixin toolbar-component-theme($theme) {
+    // retrieve variables from theme
+    // (all possible variables, use only what you really need)
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+}

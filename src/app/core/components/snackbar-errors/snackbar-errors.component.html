@@ -1,0 +1,11 @@
+<div class="error-list-container">
+  <div id="error-list-header">
+    <mat-icon class="action-close" (click)="dismissSnackbar()">cancel</mat-icon>
+  </div>
+  <div>
+    <div id="error-list-title" *ngIf="title">{{title}}</div>
+    <ul id="error-list" class="error-list">
+      <li *ngFor="let error of errors">{{error}}</li>
+    </ul>
+  </div>
+</div>

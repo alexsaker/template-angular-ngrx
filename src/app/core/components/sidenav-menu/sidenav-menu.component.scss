@@ -1,0 +1,94 @@
+@import "../../../../styles";
+#sidenav-menu-container {
+    max-height: calc(100vh - 50px);
+    height: calc(100vh - 50px);
+}
+
+:host {
+    .sidenav-menu {
+        width: 250px;
+        &.collapsed {
+            width: 50px;
+        }
+        color: $white;
+        background-color: $gray-dark;
+    }
+}
+
+.brand-banner {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .logo {
+        width: 50px;
+    }
+}
+
+.sidenav-menu-container-closed {
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    align-items: center;
+    -ms-flex-item-align: center;
+}
+
+.mat-menu-panel.users-collapsed-menu {
+    background: $gray-dark !important;
+}
+
+ ::ng-deep .users-collapsed-menu {
+    .user-item,
+    {
+        color: $white;
+        background-color: lighten($gray-dark, 5%);
+        height: 38px;
+        &>i,
+        &>a>i {
+            margin-right: 12px;
+        }
+    }
+    .mat-menu-content {
+        padding: 0px !important;
+    }
+}
+
+.users-container {
+    background-color: $gray-dark;
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+.mat-expansion-panel {
+    background-color: $gray-dark;
+    color: $white;
+     ::ng-deep .mat-expansion-panel-body {
+        padding: 0;
+        background-color: lighten($gray-dark, 5%);
+    }
+    .mat-expansion-panel-header {
+        padding: 0 12px;
+        height: 48px !important;
+    }
+    .mat-expansion-panel-header-title,
+    .mat-expansion-indicator {
+        &>i,
+        &>a>i {
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+    }
+    .user-item {
+        padding: 4px 1px;
+        &>a>i,
+        &>i {
+            margin-right: 12px;
+            margin-left: 17px;
+        }
+    }
+}

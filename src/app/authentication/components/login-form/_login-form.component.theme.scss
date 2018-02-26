@@ -1,0 +1,14 @@
+
+// mixin name will be used in main style.scss
+@mixin login-form-component-theme($theme) {
+    // retrieve variables from theme
+    // (all possible variables, use only what you really need)
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+    .active-eye {
+        color: mat-color($primary);
+    }
+    h1{
+        color:$gray-light !important;
+    }
+}
